@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:spacekitties/netflix.dart';
 
 void main() {
   runApp(MyApp());
@@ -142,11 +143,14 @@ class _MyHomePageState extends State<MyHomePage> {
           Positioned(
             top: MediaQuery.of(context).size.width * 0.50,
             left: MediaQuery.of(context).size.width * 0.30,
-            child: Image.asset(
-              'assets/happy.gif',
-              width: 200,
-              height: 200,
-              alignment: new Alignment(-1.0, 6.2),
+            child: FlatButton(
+              onPressed: () {},
+              child: Image.asset(
+                'assets/happy.gif',
+                width: 200,
+                height: 200,
+                alignment: new Alignment(-1.0, 6.2),
+              ),
             ),
           ),
 
@@ -171,7 +175,10 @@ class _MyHomePageState extends State<MyHomePage> {
             top: MediaQuery.of(context).size.width * 1.0,
             left: MediaQuery.of(context).size.width * 0.20,
             child: FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Netflix()));
+              },
               child: new Image.asset(
                 "assets/netflix.png",
                 //alignment: new Alignment(100.0, 1000.0),
