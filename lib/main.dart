@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 void main() {
   runApp(MyApp());
 }
 //Can you see this?
-
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -131,10 +129,10 @@ class _MyHomePageState extends State<MyHomePage> {
           //Background
           Container(
             child: new Image.asset(
-              'assets/livingroom.png',
+              'assets/myplanet2.png',
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width * 1.466,
-              //fit: BoxFit.fill,
+              height: MediaQuery.of(context).size.width * 2,
+              fit: BoxFit.fill,
               //alignment: new Alignment(-3.0, -100.0),
               //colorBlendMode: BlendMode.softLight,
             ),
@@ -142,8 +140,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
           // AVATAR
           Positioned(
+            top: MediaQuery.of(context).size.width * 0.50,
+            left: MediaQuery.of(context).size.width * 0.30,
             child: Image.asset(
-              'assets/happy.png',
+              'assets/happy.gif',
               width: 200,
               height: 200,
               alignment: new Alignment(-1.0, 6.2),
@@ -152,16 +152,33 @@ class _MyHomePageState extends State<MyHomePage> {
 
           // HEADPHONE BUTTON
           Positioned(
-            top: MediaQuery.of(context).size.width * 0.50,
-            left: MediaQuery.of(context).size.width * 0.30,
+            top: MediaQuery.of(context).size.width * 0.8,
+            left: MediaQuery.of(context).size.width * 0.01,
             child: FlatButton(
               onPressed: () {},
               child: new Image.asset(
                 "assets/happy.png",
                 //alignment: new Alignment(100.0, 1000.0),
                 fit: BoxFit.fill,
-                width: 300,
-                height: 500,
+                width: 80,
+                height: 80,
+              ),
+            ),
+          ),
+
+          // NETFLIX BUTTON
+          Positioned(
+            top: MediaQuery.of(context).size.width * 1.0,
+            left: MediaQuery.of(context).size.width * 0.20,
+            child: FlatButton(
+              onPressed: () {},
+              child: new Image.asset(
+                "assets/netflix.png",
+                //alignment: new Alignment(100.0, 1000.0),
+                fit: BoxFit.fill,
+                colorBlendMode: BlendMode.colorBurn,
+                width: 80,
+                height: 80,
               ),
             ),
           ),
