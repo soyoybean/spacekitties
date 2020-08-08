@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'My Uni',
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.amber,
       ),
-      home: new MyHomePage(title: 'Hello User!'),
+      home: new MyHomePage(title: 'Soyon Kim'),
     );
   }
 }
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
+      // called again, and so nothing would appear to happen.ndnsdksd
       _counter++;
     });
   }
@@ -123,20 +123,49 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have been in touch with your counselor this many times',
+      body: Stack(
+        children: <Widget>[
+          //Background
+          Container(
+            child: new Image.asset(
+              'assets/livingroom.png',
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.width * 1.466,
+              //fit: BoxFit.fill,
+              //alignment: new Alignment(-3.0, -100.0),
+              //colorBlendMode: BlendMode.softLight,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline1,
+          ),
+
+          // AVATAR
+          Positioned(
+            child: Image.asset(
+              'assets/happy.png',
+              width: 200,
+              height: 200,
+              alignment: new Alignment(-1.0, 6.2),
             ),
-          ],
-        ),
+          ),
+
+          // HEADPHONE BUTTON
+          Positioned(
+            top: MediaQuery.of(context).size.width * 0.50,
+            left: MediaQuery.of(context).size.width * 0.30,
+            child: FlatButton(
+              onPressed: () {},
+              child: new Image.asset(
+                "assets/happy.png",
+                //alignment: new Alignment(100.0, 1000.0),
+                fit: BoxFit.fill,
+                width: 300,
+                height: 500,
+              ),
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
