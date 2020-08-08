@@ -5,7 +5,6 @@ import 'package:spacekitties/netflix.dart';
 void main() {
   runApp(MyApp());
 }
-//Can you see this?
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -114,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            //CustomListTile(Icons.person, 'Profile', () => Profile()),
+            CustomListTile(Icons.tv, 'Netflix', () => Netflix()),
           ],
         ),
       ),
